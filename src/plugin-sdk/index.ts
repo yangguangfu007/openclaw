@@ -75,7 +75,18 @@ export type {
   TranscriptRewriteResult,
 } from "../context-engine/types.js";
 
+// Commonly needed utilities that should be available at the root for external plugins
+export { resolvePreferredOpenClawTmpDir } from "../infra/tmp-openclaw-dir.js";
+export { buildChannelConfigSchema } from "../channels/plugins/config-schema.js";
+export { formatPairingApproveHint } from "../channels/plugins/helpers.js";
+export {
+  resolveSenderCommandAuthorizationWithRuntime,
+  resolveDirectDmAuthorizationOutcome,
+} from "./command-auth.js";
+export { createTypingCallbacks } from "../channels/typing.js";
 export { emptyPluginConfigSchema } from "../plugins/config-schema.js";
+export { normalizeAccountId } from "../utils/account-id.js";
+export { stripMarkdown } from "../shared/text/strip-markdown.js";
 export { registerContextEngine } from "../context-engine/registry.js";
 export { delegateCompactionToRuntime } from "../context-engine/delegate.js";
 export { onDiagnosticEvent } from "../infra/diagnostic-events.js";
